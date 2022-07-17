@@ -22,6 +22,8 @@ repositories {
 dependencies {
     // Use Scala 2.13 in our library project
     implementation 'org.scala-lang:scala-library:2.13.6'
+    // parallel collection
+    implementation 'org.scala-lang.modules:scala-parallel-collections_2.13:1.0.3'
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:30.1.1-jre'

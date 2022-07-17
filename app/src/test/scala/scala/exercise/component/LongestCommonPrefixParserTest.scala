@@ -33,4 +33,7 @@ class LongestCommonPrefixParserTest extends AnyFunSuite {
     assert(longestCommonPrefixParser.parse(List("abbb","abbbbbbbbbbbbbbb2", "ab")) == "ab")
   }
   
+  test("test parseV2") {
+    assert(longestCommonPrefixParser.parseV2(List("abbb","abbbbbbbbbbbbbbb2", "ab")) == "ab")
+  }
 }

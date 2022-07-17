@@ -1,5 +1,7 @@
 package scala.exercise.component
 
+import scala.collection.parallel.CollectionConverters._
+
 class LongestCommonPrefixParser {
   
   def parse(list: List[String]): String = {
@@ -28,4 +30,19 @@ class LongestCommonPrefixParser {
     commonPrefix
   }
   
+  // parallel version
+  def parseV2(list: List[String]): String = {
+    list.par.fold(list(0))((w1, w2) => getCommonPrefix(w1, w2))
+  }
+  
+  private def getCommonPrefix(word1: String, word2: String) :String = {
+    val charArr1: Array[Char] = word1.toCharArray
+    val charArr2: Array[Char]= word2.toCharArray
+    charArr1.zip(charArr2)
+      .takeWhile(p => p._1 == p._2)
+      .map(p => p._1)
+      .mkString
+  }
+  
+
 }
