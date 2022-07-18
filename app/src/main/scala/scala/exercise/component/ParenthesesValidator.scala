@@ -36,11 +36,10 @@ class ParenthesesValidator {
         val nextChar: Char = iterator.next().toChar
         
         if (lastCharOpt.isEmpty) { // no element in stack
+          stack.push(nextChar)
           if (ketsSet.contains(nextChar)) {
             // nextChar is ket, it is not necessary to iterate all data anymore.
             loop.break()
-          } else {
-            stack.push(nextChar)
           }
         } else if (lastCharOpt.get != ketsToBrasMap.get(nextChar).getOrElse(null)) {
           stack.push(lastCharOpt.get)

@@ -13,6 +13,19 @@ class ParenthesesValidatorTest extends AnyFunSuite {
     assert(validator.isValidated("") == false)
   }
   
+  test("unclosed string should return false") {
+    assert(validator.isValidated("(") == false)
+    assert(validator.isValidated("[") == false)
+    assert(validator.isValidated("{") == false)
+    assert(validator.isValidated("()(") == false)
+    assert(validator.isValidated("()[") == false)
+    assert(validator.isValidated("(){") == false)
+  
+  
+  
+  
+  }
+  
   test("single brackets pairs should return true") {
     assert(validator.isValidated("{}") == true)
     assert(validator.isValidated("[]") == true)
