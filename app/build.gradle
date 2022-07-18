@@ -39,5 +39,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'scala_exercise.App'
+    mainClass = 'scala.exercise.App'
 }
